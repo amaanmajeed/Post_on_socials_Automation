@@ -10,7 +10,7 @@ from time import sleep
 import pyautogui
 
 username = "umtgdsc@gmail.com"  # FB Email Address
-fb_pass = "gdsc@umt_fb"        # FB Password
+fb_pass = "************"        # FB Password
 
 
 # from selenium.webdriver.support.ui import WebDriverWait
