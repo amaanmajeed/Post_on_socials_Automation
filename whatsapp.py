@@ -1,3 +1,5 @@
+# Automated Sending Whatsapp Messages to saved numbers on your phone.
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By  # for xpath
 from selenium.webdriver.chrome.options import Options  # stop closing
