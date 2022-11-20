@@ -81,9 +81,8 @@ action.send_keys("Hello! How are you all doing.\n Its been a while since we have
 # action.send_keys("Hello! How are you brother!")
 # action.perform()
 
-
-for j in range(11):
-    ActionChains(webfb).key_down(Keys.TAB).perform()
+action.send_keys(Keys.TAB * 11)
+action.perform()
 
 # simply press enter or uncomment the line below to complete the automation. 😇
 # action.send_keys(Keys.ENTER).perform()
