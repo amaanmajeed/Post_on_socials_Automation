@@ -10,7 +10,7 @@ from time import sleep
 import pyautogui
 
 username = "umtgdsc@gmail.com"  # FB Email Address
-fb_pass = "************"        # FB Password
+fb_pass = "gdsc@umt_fb"        # FB Password
 
 
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -29,14 +29,14 @@ webfb = webdriver.Chrome(options=chrome_options)  # open chrome
 webfb.get('https://www.facebook.com/')
 
 # resize windows
-pyautogui.keyDown('win')
-pyautogui.press('right')
-pyautogui.keyUp('win')
-sleep(1)
-pyautogui.press('enter')
+# pyautogui.keyDown('win')
+# pyautogui.press('right')
+# pyautogui.keyUp('win')
+# sleep(1)
+# pyautogui.press('enter')
 # pyautogui.press('alt', 'tab')
 
-sleep(10)
+sleep(2)
 
 webfb.find_element(By.XPATH, '//*[@id="email"]').send_keys(username)
 webfb.find_element(By.XPATH, '//*[@id="pass"]').send_keys(fb_pass)
