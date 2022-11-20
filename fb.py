@@ -1,4 +1,4 @@
-# Automating event posting on social media platforms.
+# Automating Facebook Page so it logins and posts
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By  # for xpath
@@ -10,7 +10,7 @@ from time import sleep
 import pyautogui
 
 username = "umtgdsc@gmail.com"  # FB Email Address
-fb_pass = "gdsc@umt_fb"        # FB Password
+fb_pass = "************"        # FB Password
 
 
 # from selenium.webdriver.support.ui import WebDriverWait
