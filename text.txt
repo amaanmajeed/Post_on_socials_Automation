@@ -1,0 +1,12 @@
+Hacktoberfest is a global event with the main goal to raise awareness about Open Source and encourage as many developers as possible to participate regularly, not just in October. Hacktoberfest also comes with a challenge and invites participants to complete it. Participate in HacktoberFest and get a chance to redeem an official HacktoberFest 2022 T-shirt or get a tree planted in your name.
+ 
+- What is Git/GitHub?
+- What is open source?
+- What is HacktoberFest?
+- How to register for Hacktoberfest?
+- How to find Repositories?
+- How to create a pull request?
+- Learn version control
+ 
+Mark your Calendars: October 20, 2022 - 7:00 PM - 9:00 PM (PST GMT +5)
+Register here: https://bit.ly/HacktoberFest-2022
