@@ -18,73 +18,52 @@ fb_pass = "************"        # FB Password
 
 # driver.maximize_window()
 # driver = webdriver.Chrome()
+def post_on_fb(message):
+    chrome_options = Options()
+    chrome_options.add_argument("--disable-notifications")
 
-# code to stop window from closing
-chrome_options = Options()
-chrome_options.add_argument("--disable-notifications")
+    chrome_options.add_experimental_option("detach", True)
 
-chrome_options.add_experimental_option("detach", True)
+    webfb = webdriver.Chrome(options=chrome_options)  # open chrome
 
-webfb = webdriver.Chrome(options=chrome_options)  # open chrome
-webfb.get('https://www.facebook.com/')
+    # code to stop window from closing
+    webfb.get('https://www.facebook.com/')
+    sleep(2)
 
-# resize windows
-# pyautogui.keyDown('win')
-# pyautogui.press('right')
-# pyautogui.keyUp('win')
-# sleep(1)
-# pyautogui.press('enter')
-# pyautogui.press('alt', 'tab')
+    webfb.find_element(By.XPATH, '//*[@id="email"]').send_keys(username)
+    webfb.find_element(By.XPATH, '//*[@id="pass"]').send_keys(fb_pass)
+    login_button = webfb.find_element(By.NAME, 'login')
+    login_button.click()
 
-sleep(2)
+    print("7 Timer: ")
+    for x in range(7):
+        sleep(1)
+        print(7 - x, end=', ')
 
-webfb.find_element(By.XPATH, '//*[@id="email"]').send_keys(username)
-webfb.find_element(By.XPATH, '//*[@id="pass"]').send_keys(fb_pass)
-login_button = webfb.find_element(By.NAME, 'login')
-login_button.click()
+    sleep(3)
+    fb_logo = webfb.find_element(By.CLASS_NAME, 'x1ujvgzy')
 
+    action = ActionChains(webfb)
+    action.click(fb_logo).perform()
+    sleep(3)
 
-print("12 Timer: ")
-for x in range(12):
+    action.send_keys(Keys.TAB * 14)
+    action.perform()
+
     sleep(1)
-    print(12 - x, end=', ')
+    action.send_keys(Keys.ENTER).perform()
 
-sleep(3)
+    sleep(9)
+    action.send_keys(message).perform()
 
-message = "Hello!\nThis is an Automated message! \n This is the way you automate a message"
-
-fb_logo = webfb.find_element(
-    By.CLASS_NAME, 'x1ujvgzy')
-
-action = ActionChains(webfb)
-action.click(fb_logo).perform()
-sleep(3)
-
-# for i in range(11):
-#     print(i, end=', ')
-#     # pyautogui.press('tab')
-#     # ActionChains(webfb).key_down(Keys.TAB).perform()
-#     fb_logo.send_keys
-
-
-action.send_keys(Keys.TAB * 13)
-action.perform()
-
-sleep(1)
-# ActionChains(webfb).key_down(Keys.ENTER).perform()
-action.send_keys(Keys.ENTER).perform()
-
-sleep(7)
-action.send_keys("Hello! How are you all doing.\n Its been a while since we have uploaded, but get ready to have an amazing road ahead.\n Amaan Majeed Siging off").perform()
-# action = ActionChains(webfb)
-
-# action.send_keys("Hello! How are you brother!")
-# action.perform()
-
-action.send_keys(Keys.TAB * 11)
-action.perform()
+    action.send_keys(Keys.TAB * 11)
+    action.perform()
 
 # simply press enter or uncomment the line below to complete the automation. 😇
 # action.send_keys(Keys.ENTER).perform()
+
+message = "Hello! How are you all doing.\n Its been a while since we have uploaded, but get ready to have an amazing road ahead.\n Amaan Majeed Siging off"
+
+post_on_fb(message)
 
 print('done')
