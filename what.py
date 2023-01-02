@@ -4,6 +4,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 
+# C:\Program Files\Google\Chrome\Application
 # chrome.exe --remote-debugging-port=8989 --user-data-dir="D:\GDSC\Resources\Zselenium\chromedriver.exe"
 
 options = webdriver.ChromeOptions()
@@ -32,8 +33,7 @@ def send_whatsapp_message(name, message):
     search.send_keys(name)
     search.send_keys(Keys.ENTER)
 
-    textbox = driver.find_element(By.XPATH,
-                                  '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p')
+    # textbox = driver.find_element(By.XPATH,'//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p')
 
     for x in message:
         textbox.send_keys(x)
@@ -67,6 +67,6 @@ for nam in name_list:
     send_whatsapp_message(nam, my_message)
 
 
-for i in range(5):
+for i in range(20):
     print(i, end=", ")
     sleep(2)
